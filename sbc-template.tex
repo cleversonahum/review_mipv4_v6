@@ -75,6 +75,15 @@ The abstract and ``resumo'' (if is the case) must be in 12 point Times font,
 indented 0.8cm on both sides. The word \textbf{Abstract} and \textbf{Resumo},
 should be written in boldface and must precede the text.
 
+% Cleverson's Session
+The author talk about main differences between MIPv4 and MIPv6, he quote the address configuration, route optimization, routing header and ingress filter bypass. With IPv6, the address configuration in the network does not need more of NAT, because it has more address for to assign, with this the network does not has need to do the translation between a global address for a local address, thus it does not need more to has a foreign agent. Furthermore, with IPv6 each interface has a certain address received of sub network, it is important, because its facilitate the work of DHCPv6 for to set addresses for nodes, this addresses are uniques.
+
+In MIPv4 all the packets pass through the home network, after this, the packets are forwarding to foreign network until to be transmitted for the mobile node, this process is named like triangular routing. All the times in one connection the packets will do this path in MIPv4, but with MIPv6 we have a route optimization, in its just the first packet need to pass though home network, after this first time the mobile node will send a binding update to the correspondent node with its care of address of its, thus the correspondent node can to transmit packets directly for the mobile node in the next transmission of packet. With this changes the MIPv6 solved problems with triangular routing and improvement the efficiency of transmission.
+
+For to do transmissions in MIPv4 we need to pass packet of correspondent node to home agent, in there the packet is involved into a other packet IP with the care of address, this process is named like IP-within-IP. The MIPv6 uses other approach, the care of address is inserted in a value in header of IPv6, with this is possible to define for where the packets to be forwarding until to come to mobile node. This process adopted by MIPv6 use less bytes than process of MIPv4 (IP-Within-IP) thus reducing the overhead of packet delivery.
+
+
+
 \section{Performance Evaluation}
 
 In some conferences, the papers are published on CD-ROM while only the

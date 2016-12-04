@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.18)  3 DEC 2016 14:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.18)  4 DEC 2016 23:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,33 +490,34 @@ pt x 232.2276pt>
 File: fig1.jpg Graphic file (type jpg)
 
 <use fig1.jpg>
-Package pdftex.def Info: fig1.jpg used on input line 108.
+Package pdftex.def Info: fig1.jpg used on input line 117.
 (pdftex.def)             Requested size: 213.39568pt x 194.81471pt.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 109.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 118.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 109.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 118.
 
-<fig2.jpg, id=14, 205.7286pt x 234.1548pt>
+[2] <fig2.jpg, id=17, 205.7286pt x 234.1548pt>
 File: fig2.jpg Graphic file (type jpg)
  <use fig2.jpg>
-Package pdftex.def Info: fig2.jpg used on input line 115.
+Package pdftex.def Info: fig2.jpg used on input line 124.
 (pdftex.def)             Requested size: 128.0387pt x 145.73541pt.
- [2 <./fig1.jpg>]
-
-LaTeX Warning: Citation `knuth:84' on page 3 undefined on input line 159.
 
 
-LaTeX Warning: Citation `boulic:91' on page 3 undefined on input line 160.
+LaTeX Warning: Citation `knuth:84' on page 3 undefined on input line 168.
 
 
-LaTeX Warning: Citation `smith:99' on page 3 undefined on input line 160.
+LaTeX Warning: Citation `boulic:91' on page 3 undefined on input line 169.
 
+
+LaTeX Warning: Citation `smith:99' on page 3 undefined on input line 169.
+
+[3 <./fig1.jpg> <./fig2.jpg>]
 No file sbc-template.bbl.
-[3 <./fig2.jpg>] (./sbc-template.aux)
+[4] (./sbc-template.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -528,7 +529,7 @@ Here is how much of TeX's memory you used:
  6668 multiletter control sequences out of 15000+600000
  21033 words of font info for 44 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,28p,261b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,28p,761b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
@@ -538,10 +539,10 @@ tic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sbc-template.pdf (3 pages, 165241 bytes).
+Output written on sbc-template.pdf (4 pages, 166666 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
