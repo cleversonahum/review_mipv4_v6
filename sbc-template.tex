@@ -28,149 +28,85 @@
 \maketitle
 
 \begin{abstract}
-  This meta-paper describes the style to be used in articles and short papers
-  for SBC conferences. For papers in English, you should add just an abstract
-  while for the papers in Portuguese, we also ask for an abstract in
-  Portuguese (``resumo''). In both cases, abstracts should not have more than
-  10 lines and must be in the first page of the paper.
-\end{abstract}
-     
+  In the last years, there has been a huge increase in the number of users connected in mobile networks, requesting better studies in this area. This review talk about this problem, comparing the MPIV4 model, more used in the
+  moment, with the MIPV6 model that promises to improve the MIPV4 model, showing the qualities and the problems these   applications through the results results obtained in the article, Performance Comparison of Mobile IPv4 and
+  Mobile IPv6 Protocols in Wireless Systems, R.Gunasundari and S.Shanmugavel.
+\end{abstract}     
 \begin{resumo} 
-  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
-  resumos de artigos para publicação nos anais das conferências organizadas
-  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
-  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
-  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
-  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
-  página do artigo.
+  Nos ultimos anos, ocorreu um enorme aumento no número de usuários conectados em redes móveis, solicitando melhores estudos nesta área. Esta resenha fala sobre este problema, comparando o modelo MPIV4, mais utilizado no momento, com o modelo MIPV6 que promete melhorar o modelo MIPV4, mostrando as qualidades e os problemas destas aplicações por meio dos resultados obtidos no artigo, Performance Comparison of Mobile IPv4 and Mobile IPv6 Protocols in Wireless Systems, R.Gunasundari and S.Shanmugavel.
 \end{resumo}
 
 
 \section{Introduction}
 
-All full papers and posters (short papers) submitted to some SBC conference,
-including any supporting documents, should be written in English or in
-Portuguese. The format paper should be A4 with single column, 3.5 cm for upper
-margin, 2.5 cm for bottom margin and 3.0 cm for lateral margins, without
-headers or footers. The main font must be Times, 12 point nominal size, with 6
-points of space before each paragraph. Page numbers must be suppressed.
+As already mentioned by many authors, the implementation the IPV6 protocol was necessary, mainly, because of the low addressing capacity of the IPV4 model.  Besides, the emergence the IPV6 protocol also contributed to IP mobility. However, what the objective the IP mobility? Basically, the mobility objective at the network layer is to allow that a device or node to move from one network to another, without changing your IP address, maintaining end to end communication of an application, one example is, the video stream, even if the device is on the move. 
 
-Full papers must respect the page limits defined by the conference.
-Conferences that publish just abstracts ask for \textbf{one}-page texts.
+The IETF (Internet Engineering Task Force) standardized Mobile IP in layers and IP mobility is already present in IPV4 protocol, but its use is not very efficient, because the delay and looses in the transfer of packages are very high.With this, the MIPV6 emerged to solve this problem, although it has not solved the high delay problem, it is more
+effective that the MIPV4.
+
+Coming up next, we present the article organization.  In chapter 2 we present the protocol overview, talking about MIPV4, MIPV6 and routing, while in chapter 3 we present the performance evaluation, where they are debated and questioned the simulations results. And finally, in chapters 4 and 5, we show our conclusions about the theme and this
+article, and the studies references.
 
 \section{Protocol Overview} \label{sec:firstpage}
+%Parte João
+\subsection{Mobile IPv4}
 
-The first page must display the paper title, the name and address of the
-authors, the abstract in English and ``resumo'' in Portuguese (``resumos'' are
-required only for papers written in Portuguese). The title must be centered
-over the whole page, in 16 point boldface font and with 12 points of space
-before itself. Author names must be centered in 12 point font, bold, all of
-them disposed in the same line, separated by commas and with 12 points of
-space after the title. Addresses must be centered in 12 point font, also with
-12 points of space after the authors' names. E-mail addresses should be
-written using font Courier New, 10 point nominal size, with 6 points of space
-before and 6 points of space after.
+Users with MN (Mobile Node) have a local area network, and can move between different places, where an area is typically a remote network where the user connects to a wireless cell. Each of these areas has one or more FA (Foreign Agent), which are responsible for managing the permanence of MHs in their respective area, besides, each area has an HA (Home Agent), responsible for its local MNs, but who are visiting other areas.
 
-The abstract and ``resumo'' (if is the case) must be in 12 point Times font,
-indented 0.8cm on both sides. The word \textbf{Abstract} and \textbf{Resumo},
-should be written in boldface and must precede the text.
+Whenever an MN (Mobile Node) enters an area, it must register with the FA (Foreign Agent) responsible for this perimeter. The FA periodically broadcasts your address, announcing its presence for the new Mobile Nodes, which if they did not want to wait for the broadcast of the FA, they could also make a broadcast asking who the responsible FA is.
+
+The mobile host registers with the FA, giving the address of its home agent and security information. The FA, in turn, contacts the HA (Home Agent), providing the safety information received from the MN, and announcing the presence of the MN in the area. Satisfied with the information, the HA informs AF to proceed with the registration, and the latter informs the MN that he is registered.
+
+From this point, whenever a host tries to contact the MH, the packet addressed to it will be intercepted by the HA. On MN home network, because at first the sender does not know if the MH is in its permanent area or in another area. After intercepting the packet, the HA does the following: Encapsulates this packet in the data field of a new packet, and directs this new package to the FA responsible for the area where the MH is. This procedure is called tunneling. Notifies the sender of the original packet to send the next packets destined for the MH directly to the FA using the same tunneling technique. In this way, subsequent packets do not need to pass through HA.
+
+MIPV4 presents a very innovative proposal regarding Internet access. However its implementation presents several problems to be overcome, Such as, the number of control messages to identify devices, improve the localization algorithm that is optimized in its successor MIPV6. In this way, it can be verified that the Mobile IP protocol presents deficiencies with respect to the scalability since as the number of devices increases, the protocol loses performance, this limits its use in new generation networks. Therefore, its use is impractical as it does not provide sufficient resources to meet current demands.
+
+\subsection{Mobile IPv6}
+
+MIPv6 (Mobile IPv6) is a protocol that was developed as a subset of Internet Protocol version 6 (IPv6) to support mobile connections. MIPv6 facilitates the movement of the node from one Ethernet type to another of the same type as well as the movement from an Ethernet network to a Wireless LAN cell.
+
+MIPv6 is an update to the Mobile IP standard (RFC 2002), created by the Internet Engineering Task Force (IETF), and is designed to authenticate mobile devices (known as mobile nodes) using IPv6 addresses. Mobile IPv6, like MIP, allows a mobile node to move from one network to another without breaking a connection. This means that the original address(home address) never changes, the mobile node (MN) can be anywhere, that the packets will be routed correctly to it through appropriate mechanisms Motion is thus transparent to the transport layer and to applications that use the TCP IP and Mobile IPv6 protocol.
+
+The home address is made up of a valid prefix in the link of your home network. It is through this address that a corresponding node will communicate with the mobile node, regardless of where it is. When the mobile node changes its network, it maintains the home address and receives another address, the care-of address (COA), consisting of a valid prefix on a foreign network. This address is acquired stateless or stateful, (without or with address server, 
+respectively). In this way, MN will have a home address and one or more care-of address when it is moving between networks. In order to be able to know where the mobile node is, an association between home address and care-of address must be performed (binding). This care-of address is made by the mobile node, in the home agent (HA). This association is performed through a binding registration, where the MN sends messages called Binding Updates (BU) to the HA, which responds with a Binding Acknowledgment (BA) message.
+
+The corresponding nodes (CNs) in IPv6 have "intelligence" for route optimization, that is, they can store bindings between home address and care-of-address of mobile nodes. Thus, a mobile node can provide information about its location for CNs, through the corresponding binding procedure. In this procedure, a binding establishment authorization mechanism is performed, called the return routability procedure. Note that the Foreign Agent (FA), present in MIPv4, no longer exists. Communication between MN and CN can take place in two ways:
+
+  Bidirectional tunneling: does not require that the CN has MIPv6 support and that the MN has registered with the CN. The packets are routed from the CN to the HA and the HA is tunneled to the MN. Then the MN responds to the HA by tunnel which, in turn, responds to the CN. Each intercepted packet is tunneled for MN's care-of address.
+
+Route optimization: the CN must support MIPv6 ("intelligence" for binding) and the MN must register with the CN. In this case, the CN, before sending the packet, searches in a cache for an association between home address and care-of address of MN. If there is an association, the packet will be routed to the care-of address of the mobile node directly. This eliminates congestion in the home link and in HA. The MIPV6 protocol corrects several of its predecessor's failures, increasing the quality of the protocol as a whole, increasing the chances of being implemented on a large scale, being able to offer free Internet to mobile devices, and compete with the telephone operators that offer 3G and 4G Internet services in Brazil. However the standardization for the IPv6 protocol follows slowly for home users, as the price of the equipment is not affordable, regarding security the IPV6 itself offers parts in its headers to insert security algorithms that IPv4 does not offer, however there is still the use of unidentified binding updates, which are treated as a security problem, as this feature allows packets destined To a mobile host being sent to a remote address (COA), unauthenticated use of it could lead to malicious updates that would lead a correspondent to send packets destined for the mobile host to a third host. There is still the scalability problem of its previous version that does not allow the connection of multiple mobile nodes on a single network. But there is still the possibility of applying the mobility in our daily life because the Internet is 
+increasingly more collaborative.
+
 
 % Cleverson's Session
-The author talk about main differences between MIPv4 and MIPv6, he quote the address configuration, route optimization, routing header and ingress filter bypass. With IPv6, the address configuration in the network does not need more of NAT, because it has more address for to assign, with this the network does not has need to do the translation between a global address for a local address, thus it does not need more to has a foreign agent. Furthermore, with IPv6 each interface has a certain address received of sub network, it is important, because its facilitate the work of DHCPv6 for to set addresses for nodes, this addresses are uniques.
+\subsection{Main changes of MIPv4 to MIPv6}
+The author talk about main differences between MIPv4 and MIPv6, he quote the address configuration, route optimization, routing header and ingress filter bypass. With IPv6, the address configuration in the network does not need more of NAT, because it has more address for to assign, with this the network does not has need to do the translation between a global address for a local address, thus it does not need to has a foreign agent. Furthermore, with IPv6 each interface has a certain address received of sub network, it is important, because its facilitate the work of DHCPv6 for to set addresses for nodes, this addresses are unique.
 
-In MIPv4 all the packets pass through the home network, after this, the packets are forwarding to foreign network until to be transmitted for the mobile node, this process is named like triangular routing. All the times in one connection the packets will do this path in MIPv4, but with MIPv6 we have a route optimization, in its just the first packet need to pass though home network, after this first time the mobile node will send a binding update to the correspondent node with its care of address of its, thus the correspondent node can to transmit packets directly for the mobile node in the next transmission of packet. With this changes the MIPv6 solved problems with triangular routing and improvement the efficiency of transmission.
+In MIPv4 all the packets pass through the home network, after this, the packets will forward to foreign network until to be transmitted for the mobile node, this process is named like triangular routing. All the times in one connection the packets will do this path in MIPv4, but with MIPv6 we have a route optimization, in its just the first packet need to pass though home network, after this first time the mobile node will send a binding update to the correspondent node with its care of address of its, thus the correspondent node can to transmit packets directly for the mobile node in the next transmission of packet. With this changes the MIPv6 solved problems with triangular routing and improvement the efficiency of transmission.
 
 For to do transmissions in MIPv4 we need to pass packet of correspondent node to home agent, in there the packet is involved into a other packet IP with the care of address, this process is named like IP-within-IP. The MIPv6 uses other approach, the care of address is inserted in a value in header of IPv6, with this is possible to define for where the packets to be forwarding until to come to mobile node. This process adopted by MIPv6 use less bytes than process of MIPv4 (IP-Within-IP) thus reducing the overhead of packet delivery.
 
+In MIPv6, it is possible to use both the transmission through Home Address like in MIPv4 or a direct transmission for to care-of-address after the first transmission through Home Address, because after this it is possible to know the care-of-address of mobile node. Sometimes, the network has a high delay in a link due a congestion, so it is important to have more option for to do transmission for a mobile node, this process is named ingress filter bypass. With this, it can to do a balance between the links contributing for a better distribution in the transmissions in the network.
+
+So, the design of MIP actual is a improvement gained with all the experiences lived with MIPv4 and now with MIPv6. MIPv4 had many problems and with the MIPv6 many problems of it was solved, some functions was improvement into MIPv6 and new functionalities were added.
 
 
 \section{Performance Evaluation}
 
-In some conferences, the papers are published on CD-ROM while only the
-abstract is published in the printed Proceedings. In this case, authors are
-invited to prepare two final versions of the paper. One, complete, to be
-published on the CD and the other, containing only the first page, with
-abstract and ``resumo'' (for papers in Portuguese).
 
 \section{Conclusion}
 
-Section titles must be in boldface, 13pt, flush left. There should be an extra
-12 pt of space before each title. Section numbering is optional. The first
-paragraph of each section should not be indented, while the first lines of
-subsequent paragraphs should be indented by 1.27 cm.
-
-\subsection{Subsections}
-
-The subsection titles must be in boldface, 12pt, flush left.
-
-\section{Figures and Captions}\label{sec:figs}
+The MIPv4 and MIPv6 were solution very important for its times, but nowadays much concepts about networks and the needs of people changed. With this the network need to change together, because this we have discussed about the future Internet and new architectures.
 
 
-Figure and table captions should be centered if less than one line
-(Figure~\ref{fig:exampleFig1}), otherwise justified and indented by 0.8cm on
-both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
-be Helvetica, 10 point, boldface, with 6 points of space before and after each
-caption.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.5\textwidth]{fig1.jpg}
-\caption{A typical figure}
-\label{fig:exampleFig1}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.3\textwidth]{fig2.jpg}
-\caption{This figure is an example of a figure caption taking more than one
-  line and justified considering margins mentioned in Section~\ref{sec:figs}.}
-\label{fig:exampleFig2}
-\end{figure}
-
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid
-thick, doubled, or unnecessary framing lines. When reporting empirical data,
-do not use more decimal digits than warranted by their precision and
-reproducibility. Table caption must be placed before the table (see Table 1)
-and the font used must also be Helvetica, 10 point, boldface, with 6 points of
-space before and after each caption.
-
-\begin{table}[ht]
-\centering
-\caption{Variables to be considered on the evaluation of interaction
-  techniques}
-\label{tab:exTable1}
-\smallskip
-\begin{tabular}{|l|c|c|}
-\hline
-& Value 1 & Value 2\\[0.5ex]
-\hline
-&&\\[-2ex]
-Case 1 & 1.0 $\pm$ 0.1 & 1.75$\times$10$^{-5}$ $\pm$ 5$\times$10$^{-7}$\\[0.5ex]
-\hline
-&&\\[-2ex]
-Case 2 & 0.003(1) & 100.0\\[0.5ex]
-\hline
-\end{tabular}
-\end{table}
-
-\section{Images}
-
-All images and illustrations should be in black-and-white, or gray tones,
-excepting for the papers that will be electronically available (on CD-ROMs,
-internet, etc.). The image resolution on paper should be about 600 dpi for
-black-and-white images, and 150-300 dpi for grayscale images.  Do not include
-images with excessive resolution, as they may take hours to print, without any
-visible difference in the result. 
 
 \section{References}
+Gunasundari R and Shanmugavel S, 'Performance Comparison of Mobile IPv4 and Mobile IPv6 Protocols in Wireless Systems', IEEE, 2009.
 
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
+Johnson D, Perkins C and Arkko.J,’Mobility support in IPv6', IETF RFC 3775, 2004.
 
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
+Thomson.S and T.Narten, ‘IPv6 stateless address auto configuration’, IETF  RFC 1971, 1996.
+
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
