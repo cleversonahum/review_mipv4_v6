@@ -93,6 +93,85 @@ So, the design of MIP actual is a improvement gained with all the experiences li
 
 \section{Performance Evaluation}
 
+%jamelly's part
+\subsection{Simulations analisys}
+In the article some features are explored in order to show the behavior of both MIPv6 and MIPv4 in wireless networks. All the simulation is done with ns-2 in the version 2.1b6 and in the implementation of MIPv4 the DSDV was kind of implemented with 	Mobiwan Module. The approach used in the article is based in a situation where there is one single MN moving between HA and FA(as showed in figure 1). Finally, the analyzed features are : 
+\begin{enumerate}
+\item Throughput of receiving bits Variation with Average Simulation End to End Delays
+\item Variation of packet Id with Simulation End to End Delay
+\item TCP traffic affected by Router Solicitation
+\end{enumerate} 
+
+%pay attemption to this figure
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.3\textwidth]{simulation_approach.png}
+\caption{The approach used in the simulation.}
+\label{fig:simulation_approach}
+\end{figure}
+
+
+\subsubsection{Throughput of receiving bits Variation with Average Simulation End to End Delays}
+
+Before getting started, it is needed to explain what is End to End delay. The End to End delay is \textit{the sum of all the delays got in each node that the packet pass through}. In the article is easily perceptible the almost linear relation between the characteristics observed. Using the figures 2 and 3 is perceptible too that the delay starts to increase from 1200Kbytes from both MIPv4 and MIPv6. There is a considerable number of similarities but the differences start when in MIPv4 the delay decreases with a throughput of 2800Kbytes while in MIPv6 it still increases with a single detail : the delay in MIPv6 is less compared to MIPv4.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.3\textwidth]{topico1_mipv4.png}
+\caption{Throughput of receiving bits Variation with Average Simulation End to End Delays in MIPv4}
+\label{fig:topico1_mipv4}
+\end{figure}
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.3\textwidth]{topico1_mipv6.png}
+\caption{Throughput of receiving bits Variation with Average Simulation End to End Delays in MIPv6.}
+\label{fig:topico1_mipv6}
+\end{figure}
+  
+
+
+\subsubsection{Variation of packet Id with Simulation End to End Delay}
+Other important aspect in the analysis, this aspect bring a important information about the protocols. It is possible to percept that in MIPv6 the delay is lower, it happens mainly because in MIPv4 the total amount of transmitted package is considerable higher than in MIPv6, what increases the probability of disconnection what makes the cost of the handover take high values.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.3\textwidth]{topico2_mipv4.png}
+\caption{Variation of packet Id with Simulation End to End Delay for MIPv4.}
+\label{fig:topico2_mipv4}
+\end{figure}
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.3\textwidth]{topico2_mipv6.png}
+\caption{Variation of packet Id with Simulation End to End Delay for MIPv6.}
+\label{fig:topico2_mipv6}
+\end{figure}
+
+
+
+\subsubsection{TCP traffic affected by Router Solicitation}
+
+In the Mobile Ip protocols, the process of registration is a pretty important step that has a important participation of advertisements from the router, losing these can make the registration time out. In MIPv4 there's a big problem cause it offers a small time of registration, what causes a great possibility to lose the advertisements from the router, and in consequence of that lose the registration process. In MIPv6 this problem is softer cause its long registration period don't compromise the registration process, the only cause to lose performance is when the MN is out of the basestation coverage and it is solved with IPV6 extensions. The figures show us situations where the MN doesn't receives advertisements neither from MH or FH, and we can percept that in a certain period that the performance is very damaged, that's the registration time.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.3\textwidth]{topico3_mipv4.png}
+\caption{TCP traffic affected by Router Solicitation for MIPv4.}
+\label{fig:topico2_mipv4}
+\end{figure}
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.3\textwidth]{topico3_mipv6.png}
+\caption{TCP traffic affected by Router Solicitation for MIPv6.}
+\label{fig:topico2_mipv6}
+\end{figure}
+
 
 \section{Conclusion}
 
